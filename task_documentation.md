@@ -26,6 +26,7 @@ Now that Tea is installed, you can import it into any Python file to use it.
 Tea performs statistical analysis on data you provide. Tea accepts data as either a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values) or a [Pandas DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp). If the data is a Pandas DataFrame, Tea expects it to be in long format.
 - Place your data file into the same folder as your Python Tea file. [(Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)](https://github.com/tea-lang-org/tea-lang/blob/master/examples/Co2/co2.csv)
 - Add the lines of code below into your Python file to load your dataset into Tea.
+  
 `data_path = "./<YOUR DATA FILE>"`
 
 `tea.data(data_path) `
@@ -40,14 +41,14 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>
 
 Tea supports four data types:
-* nominal — qualitative unordered categories (e.g., “chilled”, “nonchilled”)
-* ordinal — numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
-* interval — numeric values without a meaningful zero
-* ratio — numeric values with a meaningful zero
+* **nominal**: qualitative unordered categories (e.g., “chilled”, “nonchilled”)
+* **ordinal**: numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
+* **interval**: numeric values without a meaningful zero
+* **ratio**: numeric values with a meaningful zero
   
 *Note: Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.* 
 
-- Identify the variables you want Tea to analyze. (In the CO2  dataset: Plant, Type, Treatment, conc, and uptake.
+- Identify the variables you want Tea to analyze. (In the CO2 dataset: Plant, Type, Treatment, conc, and uptake.) 
 - Create a list of variable definitions in your Python file.
 
 Add the following line after the variable definitions to pass them to Tea.

@@ -4,7 +4,7 @@ This document is for an audience with a minimal amount of experience with progra
 
 ## Setting up Tea
 ### 1. Install Python
-Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher 	is installed on your machine. [Learn more about installing Python here.](https://www.python.org/downloads/)
+Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher is installed on your machine. [Learn more about installing Python here.](https://www.python.org/downloads/)
 
 ### 2. Install Tea
 Before you can use Tea, we first have to install it onto your computer.
@@ -18,7 +18,7 @@ Before you can use Tea, we first have to install it onto your computer.
 
 ### 3. Create a Tea File
 Now that Tea is installed, you can import it into any Python file to use it.
-- Create a new Python file with any IDE *(Integrated Developer Environment)*. I recommend [VS Code](https://code.visualstudio.com/) for beginners.
+- Create a new Python file with any Integrated Developer Environment (IDE). I recommend [VS Code](https://code.visualstudio.com/) for beginners.
   
 - Type `import tea` into the first line of the file.
   
@@ -162,7 +162,7 @@ Tea prints a [structured explanation](glossary.md) of the statistical tests it c
   2. **p_value**: This is the probability of getting that test_statistic in a random sample if the null hypothesis is true.
   3. **alpha**: This is your significance threshold. If the p_value is smaller than this value, the results are statistically significant.
   4. **Null hypothesis**: Assumes the hypothesis is false. 
-  5. **Interpretation**: If the p value is less than the alpha value, than the hypothesis is deemed statiscally signifigant and the null hypothesis is rejected. If the p value is greater than the alpha value, than the null hypothesis isn't rejected and the hypothesis isn't deemed statistically significant.
+  5. **Interpretation**: If the p value is less than the alpha value, than the hypothesis is deemed statistcally signifigant and the null hypothesis is rejected. If the p value is greater than the alpha value, than the null hypothesis isn't rejected and the hypothesis isn't deemed statistically significant.
 
 // image
 

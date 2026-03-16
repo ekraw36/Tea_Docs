@@ -1,4 +1,4 @@
-  **&nbsp; Table of Contents**
+  **Table of Contents**
 
 *   [Home](README.md)
 *   [Conceptual Overview](conceptual_overview.md)

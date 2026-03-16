@@ -3,7 +3,7 @@
 *   [Home](README.md)
 *   [Conceptual Overview](conceptual_overview.md)
 *   [Using Tea](task_documentation.md)
-*   [Statistical Analysis](statistical_analysis.md)
+*   [Statistical Analysis Glossary](glossary.md)
 *   [Troubleshooting & FAQs](troubleshooting.md)
 
   

@@ -29,7 +29,7 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 - Place your data file into the same folder as your Python Tea file. [(Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)](https://github.com/tea-lang-org/tea-lang/blob/master/examples/Co2/co2.csv)
 - Add the lines of code below into your Python file to load your dataset into Tea.
 > ```
-> data_path = "./<YOUR DATA FILE>"`
+> data_path = "./<YOUR DATA FILE>"
 > tea.data(data_path)
 > ```
 // IMAGE

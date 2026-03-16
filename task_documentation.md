@@ -2,6 +2,9 @@
 
 This document is for an audience with a minimal amount of experience with programming and statistical analysis who want to set up and use Tea for automatic statistical analysis for their datasets. This document guides readers through installing and loading datasets into Tea, then it teaches readers how to define variables, write hypotheses, add assumptions, run tests, and interpret the results of Tea’s statistical tests.
 
+Example Data File - [co2.csv](co2.csv)
+Example Tea File - [tutorial.py](tutorial.py)
+
 ## Setting up Tea
 ### 1. Install Python
 Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher is installed on your machine. [Learn more about installing Python here.](https://www.python.org/downloads/)
@@ -31,7 +34,7 @@ Now that Tea is installed, you can import it into any Python file to use it.
 ### 1. Load a dataset into Tea
 Tea performs statistical analysis on data you provide. Tea accepts data as either a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values) or a [Pandas DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp). If the data is a Pandas DataFrame, Tea expects it to be in long format.
 
-- Place your data file into the same folder as your Python Tea file. [(Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)](https://github.com/tea-lang-org/tea-lang/blob/master/examples/Co2/co2.csv)
+- Place your data file into the same folder as your Python Tea file. [(Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)](co2.csv)
   
 - Add the lines of code below into your Python file to load your dataset into Tea.
 > ```

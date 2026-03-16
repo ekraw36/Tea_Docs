@@ -1,10 +1,10 @@
 # Using Tea
 ---
-#3 Audience and Purpose
+## Audience and Purpose
 
 This document is for an audience with any amount of experience with programming and statistical analysis who want to set up and use Tea for automatic statistical analysis for their datasets. This document guides readers through installing and loading datasets into Tea, then it teaches readers how to define variables, write hypotheses, add assumptions, run tests, and interpret the results of Tea’s statistical tests.
 
-#3 Setting up Tea
+## Setting up Tea
 1. Install Python<br>
 	Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher 	is installed on your machine. [Learn more about installing Python here.](https://www.python.org/downloads/)
 

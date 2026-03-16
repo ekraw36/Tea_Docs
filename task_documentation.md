@@ -9,8 +9,8 @@ Tea works within the programming language Python. Before downloading and install
 ### 2. Install Tea
 Before you can use Tea, we first have to install it onto your computer.
 - Open a terminal or command prompt.
-- Type `pip install tealang` and hit enter. A long list of messages appear while installing tea. This process can 		take a few minutes, so be patient!
-- Once Tea is installed, the cursor will reappear and you will regain the ability to type commands.
+- Type `pip install tealang` and hit enter. A long list of messages appear while installing tea. This process can take a few minutes, so be patient!
+- Once Tea is successfully installed, the cursor will reappear and you will regain the ability to type commands.
 
 *Note: If you get a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...` when trying to install Tea, try typing `py -m pip install tealang` instead.*
 
@@ -18,35 +18,41 @@ Before you can use Tea, we first have to install it onto your computer.
 Now that Tea is installed, you can import it into any Python file to use it.
 - Create a new Python file with any IDE *(Integrated Developer Environment)*. I recommend [VS Code](https://code.visualstudio.com/) for beginners.
 - Type `import tea` into the first line of the file.
-- Save the file pressing the *Ctrl + S* keys simultaneously or by pressing the *Save* button in your IDE.
+- Save the file pressing the ***Ctrl + S*** keys simultaneously or by pressing the ***Save*** button in your IDE.
 
 ## Defining Data & Specifications
 
 ### 1. Load a dataset into Tea
 Tea performs statistical analysis on data you provide. Tea accepts data as either a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values) or a [Pandas DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp). If the data is a Pandas DataFrame, Tea expects it to be in long format.
-- Place your data file into the same folder as your Python Tea file. (Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)
-- Add these lines of code into your Python file to load your dataset into Tea.
+- Place your data file into the same folder as your Python Tea file. [(Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)](https://github.com/tea-lang-org/tea-lang/blob/master/examples/Co2/co2.csv)
+- Add the lines of code below into your Python file to load your dataset into Tea.
+`data_path = "./<YOUR DATA FILE>"
+tea.data(data_path) `
 
-Run the Python program. If it runs with no errors, the dataset has been successfully loaded. 
-(Optional) If  participants appear multiple times, specify a key column with “tea.data(data_path, key='ID')”. Without a key, each row in the dataset will be treated as an individual data point.
+- Compile and run the Python file. If it runs with no errors, the dataset has been successfully loaded. 
 
-Note: if the key column doesn’t exist in your dataset, Tea will raise an error when running the program.
+- (Optional) If  participants appear multiple times, specify a key column with `tea.data(data_path, key='ID')`. Without a key, each row in the dataset will be treated as an individual data point.
 
-Define Variables
-	Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.
+*Note: if the key column doesn’t exist in your dataset, Tea will raise an error when running the program.*
+
+### 2. Define Variables
+Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>
+
 Tea supports four data types:
-nominal — qualitative unordered categories (e.g., “chilled”, “nonchilled”)
-ordinal — numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
-interval — numeric values without a meaningful zero
-ratio — numeric values with a meaningful zero
-Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.
-Identify the variables you want Tea to analyze. (In the CO2  dataset: Plant, Type, Treatment, conc, and uptake.
-Create a list of variable definitions in your Python file.
+* nominal — qualitative unordered categories (e.g., “chilled”, “nonchilled”)
+* ordinal — numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
+* interval — numeric values without a meaningful zero
+* ratio — numeric values with a meaningful zero
+  
+*Note: Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.* 
 
-Add the following line after the variable definitions to pass them  to Tea.
+- Identify the variables you want Tea to analyze. (In the CO2  dataset: Plant, Type, Treatment, conc, and uptake.
+- Create a list of variable definitions in your Python file.
+
+Add the following line after the variable definitions to pass them to Tea.
 
 
-Define Study Design
+### 3. Define Study Design
 After defining your variables, you must tell Tea how they relate to each other. This is called the study design. Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study.
 -Decide whether your dataset represents an experiment or an observational study. The CO2 dataset is an observational study because plants weren’t assigned any treatments.
 Create a study design dictionary in your Python file.

@@ -4,12 +4,12 @@ This document contains common issues pertaining to installing and running Tea an
 # Installation and Environment Issues
 > *"Tea won’t install with pip"*
 * Ensure you are using Python 3.8+. Older versions of Python may fail during dependency resolution. 
-* Run 'python -m pip install - -upgrade pip' to avoid outdated resolver errors. 
-* If you see permission errors, try 'pip install - -user tea-lang' or use a virtual environment.
+* Run `python -m pip install - -upgrade pip` to avoid outdated resolver errors. 
+* If you see permission errors, try `pip install - -user tea-lang` or use a virtual environment.
   
 > *"ModuleNotFoundError: No module named ‘tea’"*
-* Your environment likely differs from the one where you installed Tea. Run 'pip show tea-lang' to confirm installation location.  
-* Activate the correct environment using “source venv/bin/activate” or “.\venv\Scripts\activate”
+* Your environment likely differs from the one where you installed Tea. Run `pip show tea-lang` to confirm installation location.  
+* Activate the correct environment using `source venv/bin/activate` or `.\venv\Scripts\activate`
 
 # Data loading and Formatting Issues
 > *"Tea says my data is ‘not recognized’ or ‘invalid format.’"*
@@ -18,7 +18,7 @@ This document contains common issues pertaining to installing and running Tea an
 * Confirm that categorical variables are encoded as strings, not integers.
   
 > *"Tea cannot find the data set I referenced”*
-* Check your working directory with 'os.getcwd()'
+* Check your working directory with `os.getcwd()`
 * Use absolute paths if running from an IDE
   
 # Analysis and Runtime Errors
@@ -27,7 +27,7 @@ This document contains common issues pertaining to installing and running Tea an
   
 > *"Tea runs but produces no results."*
 * This usually means that your specification is valid but incomplete. Double check that all elements of your spec are declared properly. 
-* Check that you called 'tea.run()' at the end of your program.
+* Check that you called `tea.run()` at the end of your program.
   
 # Frequently Asked Questions (FAQs)
 > *"What is Tea actually doing?"*

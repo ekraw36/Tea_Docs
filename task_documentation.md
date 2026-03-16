@@ -12,13 +12,13 @@ This document is for an audience with any amount of experience with programming 
 Before we can use Tea, we first have to install it onto our computer.
    	- Open a terminal or command prompt.
 	- Type `pip install tealang` and hit enter. A long list of messages will appear while installing tea. This process can 		take a few minutes, so be patient!
-*Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...` try typing `py -m pip install tealang` instead.*
+*Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...` try typing `py -m pip install tealang` instead.*<br>
    	- Once Tea is installed, the cursor will reappear and you will regain the ability to type commands.
 
 3. Create a Tea File<br>
-Now that Tea is installed, we can import it into any Python file so we can use it.
-	- Create a new Python file with any IDE (Integrated Developer Environment)
-		*[(I recommend VS Code for beginners)](https://code.visualstudio.com/)*
+Now that Tea is installed, we can import it into any Python file to use it.
+	- Create a new Python file (extention `.ps`) with any IDE (Integrated Developer Environment)<br>
+		*[(I recommend VS Code for beginners)](https://code.visualstudio.com/)*<br>
  	- Type `import tea` into the first line of the file.
 	- Save the file pressing the *Ctrl + S* keys simultaneously or by pressing the *Save* button in your IDE.
 

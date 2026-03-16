@@ -27,7 +27,7 @@ Now that Tea is installed, you can import it into any Python file to use it.
   
 - Save the file pressing the ***Ctrl + S*** keys simultaneously or by pressing the ***Save*** button in your IDE.
 
-// IMAGE
+![A file called "tutorial.py" in a folder called "Tea" in VS Code with on line of code: "import tea"](images/TeaFile.png)
 
 ## Defining Data & Specifications
 
@@ -48,7 +48,7 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
  
 *Note: If your specify a key column but the key column doesn’t actually exist in your dataset, Tea raises an error when running the program.*
 
-// IMAGE
+![A file "co2.csv" has been added to "Tea" and "tutorial.py" has 2 new lines declaring a variable "data_path" to hold the relative path for co2.csv and importing that into tea with "tea.data(data_path)"](images/TeaData.png)
 
 ### 2. Define Variables
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>

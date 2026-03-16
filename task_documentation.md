@@ -152,7 +152,7 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
 
 // image
 
-### 6. Interpreting Tea’s Results
+## Interpreting Tea’s Results
 Tea prints a [structured explanation](glossary.md) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
 
 - Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypotheses. 

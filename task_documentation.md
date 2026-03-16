@@ -140,9 +140,9 @@ A [hypothesis](https://ekraw36.github.io/Tea_Docs/#/glossary?id=hypotheses) tell
   >```
 
 !["tutorial.py" has 2 hypotheses. 1: Plant Qn1 will absorb less Co2 than Plant Qn2. 2: Plant Qc2 will absorb less Co2 than Plant Qc](images/TeaHypo.png)
-> - In this example, we have a partial order hypothesis. We are testing 2 one-sided comparisons.
+> In this example, we have a partial order hypothesis. We are testing 2 one-sided comparisons.<br>
 > - Hypothesis 1: Plant Qn1 will absorb less Co2 than Plant Qn2
-> - Hypothesis 2: Plant Qc2 will absorb less Co2 than Plant Qc
+> - Hypothesis 2: Plant Qc2 will absorb less Co2 than Plant Qc3
 
 ### 5. Define Assumptions *(Optional)*
 [Assumptions](https://ekraw36.github.io/Tea_Docs/#/glossary?id=assumptions) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate. Assumptions about variance and distribution can only be applied to *numerical* variables.

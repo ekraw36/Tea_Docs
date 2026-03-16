@@ -176,5 +176,11 @@ Tea prints a [structured explanation](https://ekraw36.github.io/Tea_Docs/#/gloss
 
 !["tutorial.py" has results for the test. Tea ran the Kruskall Wallis test and got a test_statistica of 6.89813 and a p_value of 0.22833](images/TeaResults.png)
 > For this example, Tea decided that the "Kruskall Wallis" test was the best fit.
-> 
+> - test_statistic: Summarizes how different groups rank distributions are from one another. A smaller value means they have similar distributions, and vice versa. A value of ~6.9 compared to a dof of 7 is not large.
+> - p_value: The probability of getting the test_statistic if the null hypothesis is true. There's a ~22% chance of getting these results if there is no difference in Co2 uptake between plants.
+> - adjusted_p_value: A p_value that has been adjusted for multiple comparisions. In this example, it's the same as p_value.
+> - alpha: Signifigance threshold. The p_value must be below this for the null hypothesis to be rejected.
+> - Degrees of Freedom(dof): Corelates to number of subjects. The higher dof, the higher distribution of the results, and therefore an increased probability of getting these results to random chance.
+> - Null Hypothesis: What we are comparing our hypothesis to. In this example, it is that there is no significant difference in Co2 uptake between the different plants.
+> - Interpretation: If the p_value is less than alpha, we reject the null hypothesis. If it is more than the alpha, we do not. In this example, our p_value is larger than 0.05 so we cannot reject the null hypothesis and we do not have signifigant proof that different plants uptake different amounts of Co2.
 

@@ -64,10 +64,14 @@ Tea supports four [data types](glossary.md):
 > ```
 > variables = [
 >   {
->     'name': '<VARIABLE NAME>'
->     'data type': '<VARIABLE TYPE>' // nominal, ordinal, interval, or ratio
->     'categories': '[<CATEGORY1 NAME>, <CATEGORY2 NAME>, <CATEGORY3 NAME>, ...]' // for data types nominal or ordinal
->     'range': '[<MIN VALUE>, <MAX VALUE>]' // for data types interal or ratio
+>     'name': '<VARIABLE1 NAME>'
+>     'data type': '<VARIABLE1 TYPE>' // nominal, ordinal, interval, or ratio
+> 
+>      // for data types nominal or ordinal
+>     'categories': '[<CATEGORY1 NAME>, <CATEGORY2 NAME>, <CATEGORY3 NAME>, ...]'
+>
+>      // for data types interal or ratio
+>     'range': '[<MIN VALUE>, <MAX VALUE>]'
 >   }
 > ]
 > ```
@@ -84,11 +88,13 @@ After defining your variables, you must tell Tea how they relate to each other. 
   > ```
   > study_design = {
   >   'study_type': '<STUDY TYPE>' // 'experiment' or 'observational study'
+  > 
   >     // if study type is an experiment
   >   'independent variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
   >   'dependent variables': '[<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
+  > 
   >     // if study type is an observational study
-  >   'contributor variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...'
+  >   'contributor variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...']
   >   'outcome variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
   > }
   > ```
@@ -104,26 +110,31 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
   
 - Write your hypotheses and the involved in Tea.
   > ```
-  > // one sided comparisons: VARIABLE1 has categories CAT1 and CAT2. This hypothesis describes a higher rate of VARIABLE2 in CAT1 than in CAT2. 
+  > // one sided comparisons: VARIABLE1 has categories CAT1 and CAT2.
+  > // This hypothesis describes a higher rate of VARIABLE2 in CAT1 than in CAT2. 
   > results1 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> > <CAT2>'])
   >
-  > // partial orders: Doing multiple one-sided comparisons on different groups simultaneously.
+  > // partial orders: Doing multiple one-sided comparisons
+  > // on different groups simultaneously.
   > results2 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> > <CAT2>', 'VARIABLE1: <CAT3> < <CAT4>', ...])
   >
-  > // two sided comparisons: the same as one-sided comparisons but with bi-directionality. CAT1 < CAT2 or CAT1 > CAT2
+  > // two sided comparisons: the same as one-sided comparisons
+  > // but with bi-directionality. CAT1 < CAT2 or CAT1 > CAT2
   > results3 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> != <CAT2>'])
   >
-  > // positive linear relationships: as VARIABLE1 increases, VARIABLE2 proportionally increases
+  > // positive linear relationships: as VARIABLE1 increases,
+  > // VARIABLE2 proportionally increases
   > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ +<VARIABLE2>'])
   >
-  > // negative linear relationships: as VARIABLE1 increases, VARIABLE2 proportionally decreases
+  > // negative linear relationships: as VARIABLE1 increases,
+  > // VARIABLE2 proportionally decreases
   > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ -<VARIABLE2>'])
   >```
 
   // IMAGE
 
 ### 5. Define Assumptions *(Optional)*
-Assumptions allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate.
+[Assumptions](glossary.md) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate.
 
 Decide which assumptions apply to your variables. In this example, we may assume our data has a False Positive Rate of 5%.
 Create an assumptions dictionary

@@ -29,7 +29,7 @@ This document contains common issues pertaining to installing and running Tea an
 * Every analysis requires: Defined variables, a relationship, and a hypothesis. Missing any of these will cause Tea to stop the analysis.
 
 > *"Tea runs but produces no results."*
-* This erros can happen when your specification is valid but incomplete. Double check that all elements of your spec are declared properly.
+* This error can happen when your specification is valid but incomplete. Double check that all elements of your spec are declared properly.
 * Check that you called `tea.run()` at the end of your program.
 ---
 ## Frequently Asked Questions (FAQs)

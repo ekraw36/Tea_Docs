@@ -41,7 +41,7 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 
 - Compile and run the Python file. If it runs with no errors, the dataset has been successfully loaded. 
 
--  **If participants appear multiple times:** specify a key column with `tea.data(data_path, key='ID')`. Without a key, each row in the dataset is treated as an individual data point.
+-  **If participants appear multiple times:** specify a key column with `tea.data(data_path, key='<KEY COLUMN>')`. Without a key, each row in the dataset is treated as an individual data point.
  
 *Note: If your specify a key column but the key column doesn’t actually exist in your dataset, Tea raises an error when running the program.*
 

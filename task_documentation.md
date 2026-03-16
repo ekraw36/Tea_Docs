@@ -152,15 +152,17 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
 
 // image
 
-## 6. Interpreting Tea’s Results
+### 6. Interpreting Tea’s Results
 Tea prints a [structured explanation](glossary.md) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
 
 - Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypotheses. 
 
 - Tea provides a list of values that are the results of the chosen test. 
-  1. **test_statistic**s measures the data involved in the hypothesis (difference between groups, correlation, etc.)
+  1. **test_statistic**: measures the data involved in the hypothesis (difference between groups, correlation, etc.)
   2. **p_value**: This is the probability of getting that test_statistic in a random sample if the null hypothesis is true.
   3. **alpha**: This is your significance threshold. If the p_value is smaller than this value, the results are statistically significant.
   4. **Null hypothesis**: Assumes the hypothesis is false. 
-  5. **Interpretation**: If the p value is less than the alpha value, than the hypothesis is deemed statiscally signifigant and the null hypothesis is rejected. If the p value is greater than the alpha value, than the null hypothesis isn't rejected and the hypothesis isn't deemed statistically significant. 
+  5. **Interpretation**: If the p value is less than the alpha value, than the hypothesis is deemed statiscally signifigant and the null hypothesis is rejected. If the p value is greater than the alpha value, than the null hypothesis isn't rejected and the hypothesis isn't deemed statistically significant.
+
+// image
 

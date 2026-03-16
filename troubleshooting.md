@@ -2,6 +2,7 @@
 This document contains common issues pertaining to installing and running Tea and includes a variety of solutions to each. Additionally, this document answers some common questions about the scope and proper usage of Tea.
 
 *Note: all suggested commands should be run in your computer's terminal*
+
 ---
 # Installation and Environment Issues
 > *"Tea won’t install with pip"*

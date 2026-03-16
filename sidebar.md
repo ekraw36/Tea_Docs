@@ -1,15 +1,17 @@
-## &nbsp; Table of Contents
+   ## &nbsp; Table of Contents
 
-- [Home](README.md)
-- [Conceptual Overview](conceptual_overview.md)
-- [Using Tea](task_documentation.md)
+*   [Home](README.md)
+*   [Conceptual Overview](conceptual_overview.md)
+*   [Using Tea](task_documentation.md)
     * Installation
     * Importing Data
     * Interpreting Results
-- [Statistical Analysis](statistical_analysis.md)
+*   [Statistical Analysis](statistical_analysis.md)
     * Variables
     * Study Design
     * Hypotheses
     * Assumptions
     * Results
-- [Troubleshooting & FAQs](troubleshooting.md)
+*   [Troubleshooting & FAQs](troubleshooting.md)
+
+  

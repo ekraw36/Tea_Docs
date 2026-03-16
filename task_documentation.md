@@ -17,8 +17,10 @@ Before you can use Tea, we first have to install it onto your computer.
 ### 3. Create a Tea File
 Now that Tea is installed, you can import it into any Python file to use it.
 - Create a new Python file with any IDE *(Integrated Developer Environment)*. I recommend [VS Code](https://code.visualstudio.com/) for beginners.
+// IMAGE
 - Type `import tea` into the first line of the file.
 - Save the file pressing the ***Ctrl + S*** keys simultaneously or by pressing the ***Save*** button in your IDE.
+// IMAGE
 
 ## Defining Data & Specifications
 
@@ -31,16 +33,20 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 
 `tea.data(data_path) `
 
+// IMAGE
+
 - Compile and run the Python file. If it runs with no errors, the dataset has been successfully loaded. 
 
 -  **If participants appear multiple times:** specify a key column with `tea.data(data_path, key='ID')`. Without a key, each row in the dataset is treated as an individual data point.
-
+ 
 *Note: If your specify a key column but the key column doesn’t actually exist in your dataset, Tea raises an error when running the program.*
+
+// IMAGE
 
 ### 2. Define Variables
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>
 
-Tea supports four data types:
+Tea supports four [data types](glossary.md):
 * **nominal**: qualitative unordered categories (e.g., “chilled”, “nonchilled”)
 * **ordinal**: numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
 * **interval**: numeric values without a meaningful zero
@@ -48,18 +54,29 @@ Tea supports four data types:
   
 *Note: Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.* 
 
-- Identify the variables you want Tea to analyze. (In the CO2 dataset: Plant, Type, Treatment, conc, and uptake.) 
+- Identify the variables you want Tea to analyze. *(In the CO2 dataset: Plant, Type, Treatment, conc, and uptake.)* 
 - Create a list of variable definitions in your Python file.
-
-Add the following line after the variable definitions to pass them to Tea.
-
+  > ```
+  > variables = [
+  >   {
+  >     'name': '<VARIABLE NAME>'
+  >     'data type': '<VARIABLE TYPE>' // nominal, ordinal, interval, or ratio
+  >     'categories': '[cat1, cat2, cat3, ...]' // for data types nominal or ordinal
+  >     'range': '[<MIN>, <MAX>]' // for data types interal or ratio
+  >   }
+  > ]
+  > ``` 
+- Add `tea.define_variables(variables)` after the variable definitions to pass them to Tea.
+// image
 
 ### 3. Define Study Design
-After defining your variables, you must tell Tea how they relate to each other. This is called the study design. Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study.
--Decide whether your dataset represents an experiment or an observational study. The CO2 dataset is an observational study because plants weren’t assigned any treatments.
-Create a study design dictionary in your Python file.
+After defining your variables, you must tell Tea how they relate to each other. This is called the [study design](glossary.md). Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study.
 
-Add the following line to pass the study design to Tea.
+- Decide whether your dataset represents an experiment or an observational study. *(The CO2 dataset is an experiment because the plants were assigned different CO2 concentrations.)*
+- Create a study design dictionary in your Python file.
+  > 
+- Add ` to pass the study design to Tea.
+// image
 
 Define Hypothesis
 A hypothesis tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. (Learn more about hypothesis testing here)

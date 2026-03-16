@@ -1,6 +1,6 @@
-  **Table of Contents**
+ **/tTable of Contents**
 
-*   [Home](/)
+*   [Home](README.md)
 *   [Conceptual Overview](conceptual_overview.md)
 *   [Using Tea](task_documentation.md)
 *   [Statistical Analysis](statistical_analysis.md)

@@ -55,16 +55,16 @@ Tea supports four [data types](glossary.md):
 
 - Identify the variables you want Tea to analyze. *(In the CO2 dataset: Plant, Type, Treatment, conc, and uptake.)* 
 - Create a list of variable definitions in your Python file.
-  > ```
-  > variables = [
-  >   {
-  >     'name': '<VARIABLE NAME>'
-  >     'data type': '<VARIABLE TYPE>' // nominal, ordinal, interval, or ratio
-  >     'categories': '[cat1, cat2, cat3, ...]' // for data types nominal or ordinal
-  >     'range': '[<MIN>, <MAX>]' // for data types interal or ratio
-  >   }
-  > ]
-  > ``` 
+> ```
+> variables = [
+>   {
+>     'name': '<VARIABLE NAME>'
+>     'data type': '<VARIABLE TYPE>' // nominal, ordinal, interval, or ratio
+>     'categories': '[cat1, cat2, cat3, ...]' // for data types nominal or ordinal
+>     'range': '[<MIN>, <MAX>]' // for data types interal or ratio
+>   }
+> ]
+> ``` 
 - Add `tea.define_variables(variables)` after the variable definitions to pass them to Tea.
 // image
 

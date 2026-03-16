@@ -3,6 +3,7 @@ This document contains common issues pertaining to installing and running Tea an
 
 *Note: all suggested commands should be run in your computer's terminal*
 
+
 # Installation and Environment Issues
 > *"Tea won’t install with pip"*
 * Ensure you are using Python 3.8+. Older versions of Python may fail during dependency resolution.
@@ -12,6 +13,7 @@ This document contains common issues pertaining to installing and running Tea an
 > *"ModuleNotFoundError: No module named ‘tea’"*
 * Your environment likely differs from the one where you installed Tea. Run `pip show tea-lang` to confirm installation location.
 * Activate the correct environment using `source venv/bin/activate` or `.\venv\Scripts\activate`
+
 
 # Data loading and Formatting Issues
 > *"Tea says my data is ‘not recognized’ or ‘invalid format.’"*
@@ -23,6 +25,7 @@ This document contains common issues pertaining to installing and running Tea an
 * Check your working directory with `os.getcwd()`
 * Use absolute paths if running from an IDE
 
+
 # Analysis and Runtime Errors
 > *"Tea reports ‘incomplete specification’"*
 * Every analysis requires: Defined variables, a relationship, and a hypothesis. Missing any of these will cause Tea to stop the analysis.
@@ -30,6 +33,7 @@ This document contains common issues pertaining to installing and running Tea an
 > *"Tea runs but produces no results."*
 * This erros can happen when your specification is valid but incomplete. Double check that all elements of your spec are declared properly.
 * Check that you called `tea.run()` at the end of your program.
+
 
 # Frequently Asked Questions (FAQs)
 > *"What is Tea actually doing?"*

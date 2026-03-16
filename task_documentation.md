@@ -1,0 +1,89 @@
+# Using Tea
+---
+# Audience and Purpose
+
+This document is for an audience with any amount of experience with programming and statistical analysis who want to set up and use Tea for automatic statistical analysis for their datasets. This document guides readers through installing and loading datasets into Tea, then it teaches readers how to define variables, write hypotheses, add assumptions, run tests, and interpret the results of Tea’s statistical tests. 
+
+# Setting up Tea
+  * Install Python
+Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher is installed on your machine. [Learn more about installing Python here](https://www.python.org/downloads/)
+  * Install Tea
+Before we can use Tea, we first have to install it onto our computer. 
+1. Open a terminal or command prompt. 
+2. Type `pip install tealang` and hit enter. A long list of messages will appear while installing tea. This process can take a few minutes, so be patient! 
+
+*Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet. . . `try typing `py -m pip install tealang` instead.*
+
+Once the tea is installed, the cursor will reappear and you will regain the ability to type commands. 
+Create a Tea File
+Now that Tea is installed, we can import it into any Python file so we can use it. 
+Create a new Python file with any IDE (I recommend VS Code for beginners)
+Write “import tea” at the top of the file. 
+
+Save the file. 
+
+Using Tea
+
+Load a dataset into Tea
+Tea performs statistical analysis on data you provide. Tea accepts data as either a CSV file or a Pandas DataFrame. If the data is a Pandas DataFrame, Tea expects it to be in long format. 
+
+Place your data file into the same folder as your Python Tea file. (Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)
+
+
+
+
+Add these lines of code into your .py file to load your dataset into Tea. 
+
+Run the Python program. If it ran successfully with no errors, the dataset has been loaded successfully. 
+(Optional) If  participants appear multiple times, specify a key column with “tea.data(data_path, key='ID')”. Without a key, each row in the dataset will be treated as an individual data point. 
+
+Note: if the key column doesn’t exist in your dataset, Tea will raise an error when running the program. 
+
+Define Variables
+	Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.
+Tea supports four data types:
+nominal — qualitative unordered categories (e.g., “chilled”, “nonchilled”)
+ordinal — numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
+interval — numeric values without a meaningful zero
+ratio — numeric values with a meaningful zero
+Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.
+Identify the variables you want Tea to analyze. (In the CO2  dataset: Plant, Type, Treatment, conc, and uptake.
+Create a list of variable definitions in your Python file. 
+
+Add the following line after the variable definitions to pass them  to Tea. 
+
+
+Define Study Design
+After defining your variables, you must tell Tea how they relate to each other. This is called the study design. Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study. 
+-Decide whether your dataset represents an experiment or an observational study. The CO2 dataset is an observational study because plants weren’t assigned any treatments. 
+Create a study design dictionary in your Python file. 
+
+Add the following line to pass the study design to Tea.
+
+Define Hypothesis
+A hypothesis tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. (Learn more about hypothesis testing here)
+Identify the variables involved in your hypothesis. For example, you may want to test if a plant absorbs a certain amount of CO2 depending on what type of plant it is. 
+Write your hypothesis and the variables it involves in Tea. 
+
+Define Assumptions (Optional)
+Assumptions allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate. 
+
+Decide which assumptions apply to your variables. In this example, we may assume our data has a False Positive Rate of 5%. 
+Create an assumptions dictionary
+
+Pass your assumptions to Tea using the line below. 
+
+Interpreting Tea’s Results
+Tea prints a structured explanation of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
+Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypothesis. For the Kruskall-Wallis test, Tea assumes 1 categorial explanatory variable, 1 continuous outcome variable, 2 or more groups, and independent observations. Our data satisfies all of these assumptions, so Tea selected the Kruskall-Wallis test. 
+
+test_statistic = 6.89813
+ This measures how different the group medians are. 
+p_value = 0.22833
+ This is the probability of seeing differences this large (or larger) if all plants truly had the same median uptake.
+alpha = 0.05
+This is your significance threshold. If the p_value is smaller than this value, the results are statistically significant. 
+
+ Null hypothesis - There is no difference in medians between Plant = Qn1, Qn2, Qn3, Qc1, Qc2, Qc3 on uptake.
+Interpretation - Fail to reject the null hypothesis at alpha = 0.05. Because p = 0.22833 > 0.05, the differences in uptake between these six plants are not statistically significant. Tea did not find evidence that these plants differ in their CO2 uptake. 
+

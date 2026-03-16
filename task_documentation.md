@@ -17,7 +17,6 @@ Before you can use Tea, we first have to install it onto your computer.
 ### 3. Create a Tea File
 Now that Tea is installed, you can import it into any Python file to use it.
 - Create a new Python file with any IDE *(Integrated Developer Environment)*. I recommend [VS Code](https://code.visualstudio.com/) for beginners.
-// IMAGE
 - Type `import tea` into the first line of the file.
 - Save the file pressing the ***Ctrl + S*** keys simultaneously or by pressing the ***Save*** button in your IDE.
 // IMAGE
@@ -32,7 +31,6 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 > data_path = "./<YOUR DATA FILE>"
 > tea.data(data_path)
 > ```
-// IMAGE
 
 - Compile and run the Python file. If it runs with no errors, the dataset has been successfully loaded. 
 
@@ -53,15 +51,15 @@ Tea supports four [data types](glossary.md):
 
 *Note: Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.* 
 
-- Identify the variables you want Tea to analyze. *(In the CO2 dataset: Plant, Type, Treatment, conc, and uptake.)* 
+- Identify the variables you want Tea to analyze. *(In the CO2 dataset: Plant, Type, Treatment, Concentration, and Uptake.)* 
 - Create a list of variable definitions in your Python file.
 > ```
 > variables = [
 >   {
 >     'name': '<VARIABLE NAME>'
 >     'data type': '<VARIABLE TYPE>' // nominal, ordinal, interval, or ratio
->     'categories': '[cat1, cat2, cat3, ...]' // for data types nominal or ordinal
->     'range': '[<MIN>, <MAX>]' // for data types interal or ratio
+>     'categories': '[<CATEGORY1 NAME>, <CATEGORY2 NAME>, <CATEGORY3 NAME>, ...]' // for data types nominal or ordinal
+>     'range': '[<MIN VALUE>, <MAX VALUE>]' // for data types interal or ratio
 >   }
 > ]
 > ``` 

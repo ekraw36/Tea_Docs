@@ -3,7 +3,7 @@
 This document is for an audience with a minimal amount of experience with programming and statistical analysis who want to set up and use Tea for automatic statistical analysis for their datasets. This document guides readers through installing and loading datasets into Tea, then it teaches readers how to define variables, write hypotheses, add assumptions, run tests, and interpret the results of Tea’s statistical tests.
 
 Example Data File - [co2.csv](https://github.com/ekraw36/Tea_Docs/blob/main/co2.csv)<br>
-Example Tea File - [tutorial.py](https://github.com/emjun/tea-lang-vis/blob/master/examples/Co2/co2_tea.py)
+Example Tea File - [tutorial.py](https://github.com/ekraw36/Tea_Docs/blob/main/tutorial.py)
 
 ## Setting up Tea
 ### 1. Install Python

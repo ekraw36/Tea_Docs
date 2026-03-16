@@ -77,31 +77,52 @@ Tea supports four [data types](glossary.md):
 // image
 
 ### 3. Define Study Design
-After defining your variables, you must tell Tea how they relate to each other. This is called the [study design](glossary.md). Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study.
+After defining your variables, you must tell Tea how they relate to each other. This is called the [study design](glossary.md). Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study. You must assign atleast one variable for each type, but you can also assign multiple.
 
 - Decide whether your dataset represents an experiment or an observational study. *(The CO2 dataset is an experiment because the plants were assigned different CO2 concentrations.)*
 - Create a study design dictionary in your Python file.
   > ```
   > study_design = {
   >   'study_type': '<STUDY TYPE>' // 'experiment' or 'observational study'
-  >     // if study type is experiment
-  >   'independent variables': '<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...
-  >   'dependent variables': '<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...
-  >     // if study type is oberservational study
-  >   'contributor variables': '<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...
-  >   'outcome variables': '<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...
+  >     // if study type is an experiment
+  >   'independent variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
+  >   'dependent variables': '[<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
+  >     // if study type is an observational study
+  >   'contributor variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...'
+  >   'outcome variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
   > }
   > ```
 
 - Add `define_study_design(study_design)` to pass the study design to Tea.
+  
 // image
 
-Define Hypothesis
-A hypothesis tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. (Learn more about hypothesis testing here)
-Identify the variables involved in your hypothesis. For example, you may want to test if a plant absorbs a certain amount of CO2 depending on what type of plant it is.
-Write your hypothesis and the variables it involves in Tea.
+### 4. Define Hypotheses
+A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. [(Learn more about hypothesis testing here)](https://resources.nu.edu/statsresources/hypothesistesting)
 
-Define Assumptions (Optional)
+- Identify the variables involved in your hypotheses. Atleast one hypothesis is required, but you can also define multiple and Tea will run a test for each one.
+  
+- Write your hypotheses and the involved in Tea.
+  > ```
+  > // one sided comparisons: VARIABLE1 has categories CAT1 and CAT2. This hypothesis describes a higher rate of VARIABLE2 in CAT1 than in CAT2. 
+  > results1 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> > <CAT2>'])
+  >
+  > // partial orders: Doing multiple one-sided comparisons on different groups simultaneously.
+  > results2 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> > <CAT2>', 'VARIABLE1: <CAT3> < <CAT4>', ...])
+  >
+  > // two sided comparisons: the same as one-sided comparisons but with bi-directionality. CAT1 < CAT2 or CAT1 > CAT2
+  > results3 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> != <CAT2>'])
+  >
+  > // positive linear relationships: as VARIABLE1 increases, VARIABLE2 proportionally increases
+  > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ +<VARIABLE2>'])
+  >
+  > // negative linear relationships: as VARIABLE1 increases, VARIABLE2 proportionally decreases
+  > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ -<VARIABLE2>'])
+  >```
+
+  // IMAGE
+
+### 5. Define Assumptions *(Optional)*
 Assumptions allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate.
 
 Decide which assumptions apply to your variables. In this example, we may assume our data has a False Positive Rate of 5%.

@@ -26,14 +26,15 @@ Now that Tea is installed, you can import it into any Python file to use it.
 Tea performs statistical analysis on data you provide. Tea accepts data as either a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values) or a [Pandas DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp). If the data is a Pandas DataFrame, Tea expects it to be in long format.
 - Place your data file into the same folder as your Python Tea file. [(Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)](https://github.com/tea-lang-org/tea-lang/blob/master/examples/Co2/co2.csv)
 - Add the lines of code below into your Python file to load your dataset into Tea.
-`data_path = "./<YOUR DATA FILE>"
-tea.data(data_path) `
+`data_path = "./<YOUR DATA FILE>"`
+
+`tea.data(data_path) `
 
 - Compile and run the Python file. If it runs with no errors, the dataset has been successfully loaded. 
 
-- (Optional) If  participants appear multiple times, specify a key column with `tea.data(data_path, key='ID')`. Without a key, each row in the dataset will be treated as an individual data point.
+- *(Optional)* If  participants appear multiple times, specify a key column with `tea.data(data_path, key='ID')`. Without a key, each row in the dataset will be treated as an individual data point.
 
-*Note: if the key column doesn’t exist in your dataset, Tea will raise an error when running the program.*
+*Note: If your specify a key column but the key column doesn’t actually exist in your dataset, Tea will raise an error when running the program.*
 
 ### 2. Define Variables
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>

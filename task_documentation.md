@@ -7,15 +7,15 @@ This document is for an audience with any amount of experience with programming 
 	Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher 	is installed on your machine. [Learn more about installing Python here.](https://www.python.org/downloads/)
 
 2. **Install Tea**<br>
-Before we can use Tea, we first have to install it onto our computer.
+Before you can use Tea, we first have to install it onto your computer.
 	- Open a terminal or command prompt.
-	- Type `pip install tealang` and hit enter. A long list of messages will appear while installing tea. This process can 		take a few minutes, so be patient!
+	- Type `pip install tealang` and hit enter. A long list of messages appear while installing tea. This process can 		take a few minutes, so be patient!
 	- Once Tea is installed, the cursor will reappear and you will regain the ability to type commands.
 
-*Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...` when trying to install Tea, try typing `py -m pip install tealang` instead.*
+*Note: If you get a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...` when trying to install Tea, try typing `py -m pip install tealang` instead.*
 
 3. **Create a Tea File**<br>
-Now that Tea is installed, we can import it into any Python file to use it.
+Now that Tea is installed, you can import it into any Python file to use it.
 	- Create a new Python file with any IDE *(Integrated Developer Environment)*. I recommend [VS Code](https://code.visualstudio.com/) for beginners.
  	- Type `import tea` into the first line of the file.
 	- Save the file pressing the *Ctrl + S* keys simultaneously or by pressing the *Save* button in your IDE.
@@ -23,13 +23,13 @@ Now that Tea is installed, we can import it into any Python file to use it.
 ## Defining Data & Specifications
 
 1. **Load a dataset into Tea**<br>
-Tea performs statistical analysis on data you provide. Tea accepts data as either a CSV file or a Pandas DataFrame. If the data is a Pandas DataFrame, Tea expects it to be in long format.
+Tea performs statistical analysis on data you provide. Tea accepts data as either a [CSV file](https://en.wikipedia.org/wiki/Comma-separated_values) or a [Pandas DataFrame](https://www.w3schools.com/python/pandas/pandas_dataframes.asp). If the data is a Pandas DataFrame, Tea expects it to be in long format.
 
 Place your data file into the same folder as your Python Tea file. (Example file - how much CO2 different plants absorb when exposed to different CO2 concentrations)
 
 Add these lines of code into your .py file to load your dataset into Tea.
 
-Run the Python program. If it ran successfully with no errors, the dataset has been loaded successfully.
+Run the Python program. If it runs with no errors, the dataset has been successfully loaded. 
 (Optional) If  participants appear multiple times, specify a key column with “tea.data(data_path, key='ID')”. Without a key, each row in the dataset will be treated as an individual data point.
 
 Note: if the key column doesn’t exist in your dataset, Tea will raise an error when running the program.

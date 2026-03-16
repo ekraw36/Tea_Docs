@@ -58,7 +58,7 @@ Tea supports four [data types](glossary.md):
 
 *Note: Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.* 
 
-- Identify the variables you want Tea to analyze. *(In the CO2 dataset: Plant, Type, Treatment, Concentration, and Uptake.)*
+- Identify the variables you want Tea to analyze. 
    
 - Create a list of variable definitions in your Python file.
 > ```
@@ -83,8 +83,9 @@ Tea supports four [data types](glossary.md):
 ### 3. Define Study Design
 After defining your variables, you must tell Tea how they relate to each other. This is called the [study design](glossary.md). Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study. You must assign atleast one variable for each type, but you can also assign multiple.
 
-- Decide whether your dataset represents an experiment or an observational study. *(The CO2 dataset is an experiment because the plants were assigned different CO2 concentrations.)*
-- Create a study design dictionary in your Python file.
+- Decide whether your dataset represents an experiment or an observational study. 
+  
+- Create a study design dictionary in your Python file:
   > ```
   > study_design = {
   >   'study_type': '<STUDY TYPE>' // 'experiment' or 'observational study'
@@ -108,41 +109,51 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
 
 - Identify the variables involved in your hypotheses. Atleast one hypothesis is required, but you can also define multiple and Tea will run a test for each one.
   
-- Write your hypotheses and the involved in Tea.
+- Write your hypotheses and the involved variables in Tea:
   > ```
   > // one sided comparisons: VARIABLE1 has categories CAT1 and CAT2.
   > // This hypothesis describes a higher rate of VARIABLE2 in CAT1 than in CAT2. 
   > results1 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> > <CAT2>'])
   >
-  > // partial orders: Doing multiple one-sided comparisons
-  > // on different groups simultaneously.
+  > // partial orders: Doing multiple one-sided comparisons on different groups simultaneously.
   > results2 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> > <CAT2>', 'VARIABLE1: <CAT3> < <CAT4>', ...])
   >
-  > // two sided comparisons: the same as one-sided comparisons
-  > // but with bi-directionality. CAT1 < CAT2 or CAT1 > CAT2
+  > // two sided comparisons: the same as one-sided comparisons but with bi-directionality. CAT1 < CAT2 or CAT1 > CAT2
   > results3 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1>: <CAT1> != <CAT2>'])
   >
-  > // positive linear relationships: as VARIABLE1 increases,
-  > // VARIABLE2 proportionally increases
+  > // positive linear relationships: as VARIABLE1 increases, VARIABLE2 proportionally increases
   > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ +<VARIABLE2>'])
   >
-  > // negative linear relationships: as VARIABLE1 increases,
-  > // VARIABLE2 proportionally decreases
+  > // negative linear relationships: as VARIABLE1 increases, VARIABLE2 proportionally decreases
   > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ -<VARIABLE2>'])
   >```
 
   // IMAGE
 
 ### 5. Define Assumptions *(Optional)*
-[Assumptions](glossary.md) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate.
+[Assumptions](glossary.md) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate. Assumptions about variance and distribution can only be applied to *numerical* variables.
 
-Decide which assumptions apply to your variables. In this example, we may assume our data has a False Positive Rate of 5%.
-Create an assumptions dictionary
+*Note: You don't have to define assumptions for Tea to successfully run.* 
 
-Pass your assumptions to Tea using the line below.
+- Decide which assumptions apply to your variables. You can apply an assumption to multiple variables.
+  
+- Create an assumptions dictionary:
+  >```
+  >  assumptions = {
+  >    'normal distribution': [['<VARIABLE1>'], ...] 
+  >    'log normal distribution': [['<VARIABLE1>'], ...] 
+  >    'groups normally distributed': [['<VARIABLE1>', '<VARIABLE2>'], ...]
+  >    'equal variance': [['<VARIABLE1>', '<VARIABLE2>'], ...] 
+  >    'Type I (False Positive) Error Rate': <ALPHA RATE>
+  >}
+  >```
 
-Interpreting Tea’s Results
-Tea prints a structured explanation of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
+- Pass your assumptions to Tea using `tea.assume(assumptions)`.
+
+// image
+
+## 6. Interpreting Tea’s Results
+Tea prints a [structured explanation](glossary.md) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
 Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypothesis. For the Kruskall-Wallis test, Tea assumes 1 categorial explanatory variable, 1 continuous outcome variable, 2 or more groups, and independent observations. Our data satisfies all of these assumptions, so Tea selected the Kruskall-Wallis test.
 
 test_statistic = 6.89813

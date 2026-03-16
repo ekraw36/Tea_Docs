@@ -1,21 +1,21 @@
 # Using Tea
 ---
-# Audience and Purpose
+#3 Audience and Purpose
 
 This document is for an audience with any amount of experience with programming and statistical analysis who want to set up and use Tea for automatic statistical analysis for their datasets. This document guides readers through installing and loading datasets into Tea, then it teaches readers how to define variables, write hypotheses, add assumptions, run tests, and interpret the results of Tea’s statistical tests.
 
-# Setting up Tea
-1. Install Python
+#3 Setting up Tea
+1. Install Python<br>
 	Tea works within the programming language Python. Before downloading and installing Tea, make sure Python 3.6 or higher 	is installed on your machine. [Learn more about installing Python here.](https://www.python.org/downloads/)
 
-2. Install Tea
+2. Install Tea<br>
 Before we can use Tea, we first have to install it onto our computer.
    	- Open a terminal or command prompt.
 	- Type `pip install tealang` and hit enter. A long list of messages will appear while installing tea. This process can 		take a few minutes, so be patient!
 *Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...` try typing `py -m pip install tealang` instead.*
    	- Once Tea is installed, the cursor will reappear and you will regain the ability to type commands.
 
-3. Create a Tea File
+3. Create a Tea File<br>
 Now that Tea is installed, we can import it into any Python file so we can use it.
 	- Create a new Python file with any IDE (Integrated Developer Environment)
 		*[(I recommend VS Code for beginners)](https://code.visualstudio.com/)*

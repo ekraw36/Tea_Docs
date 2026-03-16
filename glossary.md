@@ -1,5 +1,5 @@
 # Statistical Analysis Glossary
-This document provides basic explanations for the key parts of statistical analysis. Each section provides a general overview of the function of the element, and the different varieties of that element that are supported by Tea. To learn more about using these elements within Tea, refer to Tea’s Task Documentation.
+This document provides basic explanations for the key parts of statistical analysis. Each section provides a general overview of the function of the element, and the different varieties of that element that are supported by Tea. To learn more about using these elements within Tea, refer to [Using Tea.](task_documentation.md)
 
 ---
 ## Variables

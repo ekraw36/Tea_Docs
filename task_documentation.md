@@ -16,7 +16,7 @@ Before we can use Tea, we first have to install it onto our computer.
 
 3. **Create a Tea File**<br>
 Now that Tea is installed, we can import it into any Python file to use it.
-	- Create a new Python file with any IDE *(Integrated Developer Environment.)* I recommend [VS Code](https://code.visualstudio.com/) for beginners.
+	- Create a new Python file with any IDE *(Integrated Developer Environment)*. I recommend [VS Code](https://code.visualstudio.com/) for beginners.
  	- Type `import tea` into the first line of the file.
 	- Save the file pressing the *Ctrl + S* keys simultaneously or by pressing the *Save* button in your IDE.
 

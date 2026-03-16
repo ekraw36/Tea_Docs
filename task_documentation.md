@@ -164,7 +164,8 @@ A [hypothesis](https://ekraw36.github.io/Tea_Docs/#/glossary?id=hypotheses) tell
 
 - Pass your assumptions to Tea using `tea.assume(assumptions)`.
 
-// image
+!["tutorial.py" has 1 assumption. It sets the alpha value to 0.05](images/TeaAssume.png)
+> In this example, there is 1 assumption of the alpha value. It's set to 0.05. The p_value must be below this value for the results to be considered statistically significant. 
 
 ## Interpreting Tea’s Results
 Tea prints a [structured explanation](https://ekraw36.github.io/Tea_Docs/#/glossary?id=results) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
@@ -173,5 +174,7 @@ Tea prints a [structured explanation](https://ekraw36.github.io/Tea_Docs/#/gloss
 
 - Tea provides a list of values that are the results of the chosen test. 
 
-// image
+!["tutorial.py" has results for the test. Tea ran the Kruskall Wallis test and got a test_statistica of 6.89813 and a p_value of 0.22833](images/TeaResults.png)
+> For this example, Tea decided that the "Kruskall Wallis" test was the best fit.
+> 
 

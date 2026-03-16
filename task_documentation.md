@@ -45,15 +45,13 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 ### 2. Define Variables
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>
 
-Tea supports [four data types](glossary.md):
-  - **nominal**: qualitative unordered categories (e.g., “chilled”, “nonchilled”)
-  - **ordinal**: numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
-  - **interval**: numeric values without a meaningful zero
-  - **ratio**: numeric values with a meaningful zero
+Tea supports four [data types](glossary.md):
+  1. **nominal**: qualitative unordered categories (e.g., “chilled”, “nonchilled”)
+  2. **ordinal**: numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
+  3. **interval**: numeric values without a meaningful zero
+  4. **ratio**: numeric values with a meaningful zero
 
 *Note: Most numeric scientific measurements (like CO₂ concentration or uptake) are ratio‑type variables.* 
-For more information about variable data types, check out the [Statistics Glossary](glossary.md)
-
 
 - Identify the variables you want Tea to analyze. *(In the CO2 dataset: Plant, Type, Treatment, conc, and uptake.)* 
 - Create a list of variable definitions in your Python file.

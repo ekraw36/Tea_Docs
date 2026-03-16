@@ -5,7 +5,7 @@ This document provides basic explanations for the key parts of statistical analy
 ## Variables
 Variables represent the pieces of information measured or observed in a study. Tea uses variable definitions to understand what kind of data you have and which statistical tests are appropriate for your data. 
 
-### Data Types
+**Variable Data Types**
 Tea supports four varieties of variable data types. These correspond to standard measurement levels in statistics and determine which comparisons and tests are valid. 
 
 - ***Nominal:*** The data can be sorted into categories with no inherent ordering within them. Tea treats each category as distinct but unordered.
@@ -20,7 +20,7 @@ Tea supports four varieties of variable data types. These correspond to standard
 - ***Ratio:*** The data can be sorted into numerical values with a true “zero point” and consistent units. Zero DOES represent an absence of data being measured.Tea supports all numeric operations, including ratios and proportional reasoning. 
 > A medical patient’s pain can be measured by the firing rate of their pain stimuli nerves within their nervous system. Data is measured in milliVolts (mV). 0 mV means “no signal” and 3.2 mV is twice 1.6 mV. 
 
-### Study Designs
+## Study Designs
 The study design describes how the data was collected and what kind of claims around cause/effect and association are appropriate. 
 
 ***Experiment:*** A design where the researcher directly manipulates one or more variables and keeps all non-relevant variables the same across all tests. 
@@ -36,7 +36,7 @@ The study design describes how the data was collected and what kind of claims ar
   - *Contributor Variable:* Very similar to the independent variable in an experiment. A variable that may contribute to variation in the outcome variable but is not experimentally controlled by the researcher. 
   - *Outcome Variable:* Very similar to the dependent variable in an experiment. The outcome of the study being measured. Variance in this measurement is thought to be associated with the contributor variable. 
 	
-### Hypotheses
+## Hypotheses
 Hypotheses describe the relationship between variables that you expect to test. Tea uses these to determine which statistical tests are valid to use on your data and how to interpret results. 
 
 - ***One-sided comparison between groups:*** Tests whether one group tends to have a greater or smaller amount of a defined value than another group. 
@@ -57,7 +57,7 @@ Hypotheses describe the relationship between variables that you expect to test. 
 - ***Null hypothesis:*** The default assumption that there is no effect, difference, or relationship between the variables. Tea uses this as a baseline for statistical testing. 
 > There is no difference in pain level between the drug and placebo groups. 
 
-### Assumptions
+## Assumptions
 Assumptions describe statistical properties that you believe are true in your data. These are optional to include in your analysis in Tea. Tea checks these assumptions when selecting tests and interpreting results. 
 			
 - ***Normal distribution:*** Assumes a variable follows a bell-shaped distribution. Required for many parametric tests. 
@@ -70,7 +70,7 @@ Assumptions describe statistical properties that you believe are true in your da
 
 - ***Type I (False Positive) Error Rate / Alpha value:*** Sets the significance threshold for the results of tests. Tea uses this to decide whether to reject the null hypothesis.  
 
-### Possible Tests
+## Possible Tests
 Tea supports a variety of statistical tests that each test for a different result. Tea automatically selects the most appropriate test from a library of statistical tests based on your variables, hypotheses, and assumptions. Each test can be organized into four categories:
 	
 - **Group Comparison Tests**
@@ -85,7 +85,7 @@ These tests evaluate structured relationships involving multiple predictors, int
 - **Rank-based / Nonparametric alternatives**
 These tests evaluate differences or relationships between variables without assuming normality or equal variance. They answer the same questions as the tests above but work on ranked data instead of raw values. 
 	
-### Results
+## Results
 Tea returns structured results containing key outputs of the selected statistical test. 
 
 - ***test_statistic:*** The numeric value summarizing the evidence against the null hypothesis. 

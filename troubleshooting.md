@@ -1,6 +1,8 @@
 # *Troubleshooting & FAQs*
 This document contains common issues pertaining to installing and running Tea and includes a variety of solutions to each. Additionally, this document answers some common questions about the scope and proper usage of Tea. 
 
+*Note: all suggest commands should be run in terminal*
+
 # Installation and Environment Issues
 > *"Tea won’t install with pip"*
 * Ensure you are using Python 3.8+. Older versions of Python may fail during dependency resolution. 

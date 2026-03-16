@@ -112,7 +112,8 @@ After defining your variables, you must tell Tea how they relate to each other. 
 
 - Add `define_study_design(study_design)` to pass the study design to Tea.
   
-// image
+!["tutorial.py" has a study design dictionary. It is an observational study with "Plant" as the contributor and "uptake" is the outcome](images/TeaDesign.png)
+> - In this example, we are seeing if different plants of the same type absorb different amounts of Co2. It is an observational study because nothing is being controlled by the researchers. 
 
 ### 4. Define Hypotheses
 A [hypothesis](https://ekraw36.github.io/Tea_Docs/#/glossary?id=hypotheses) tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. [(Learn more about hypothesis testing here)](https://resources.nu.edu/statsresources/hypothesistesting)
@@ -138,7 +139,10 @@ A [hypothesis](https://ekraw36.github.io/Tea_Docs/#/glossary?id=hypotheses) tell
   > results4 = tea.hypothesize(['<VARIABLE1>', '<VARIABLE2>'], ['<VARIABLE1> ~ -<VARIABLE2>'])
   >```
 
-  // IMAGE
+!["tutorial.py" has 2 hypotheses. 1: Plant Qn1 will absorb less Co2 than Plant Qn2. 2: Plant Qc2 will absorb less Co2 than Plant Qc](images/TeaHypo.png)
+> - In this example, we have a partial order hypothesis. We are testing 2 one-sided comparisons.
+> - Hypothesis 1: Plant Qn1 will absorb less Co2 than Plant Qn2
+> - Hypothesis 2: Plant Qc2 will absorb less Co2 than Plant Qc
 
 ### 5. Define Assumptions *(Optional)*
 [Assumptions](https://ekraw36.github.io/Tea_Docs/#/glossary?id=assumptions) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate. Assumptions about variance and distribution can only be applied to *numerical* variables.

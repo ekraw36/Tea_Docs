@@ -4,7 +4,7 @@ This document contains common issues pertaining to installing and running Tea an
 *Note: all suggested commands should be run in your computer's terminal*
 
 ---
-# Installation and Environment Issues
+## Installation and Environment Issues
 > *"Tea won’t install with pip"*
 * Ensure you are using Python 3.8+. Older versions of Python may fail during dependency resolution.
 * Run `python -m pip install - -upgrade pip` to avoid outdated resolver errors.
@@ -14,7 +14,7 @@ This document contains common issues pertaining to installing and running Tea an
 * Your environment likely differs from the one where you installed Tea. Run `pip show tea-lang` to confirm installation location.
 * Activate the correct environment using `source venv/bin/activate` or `.\venv\Scripts\activate`
 ---
-# Data loading and Formatting Issues
+## Data loading and Formatting Issues
 > *"Tea says my data is ‘not recognized’ or ‘invalid format.’"*
 * Tea accepts Pandas DataFrames, CSV files, and Python dictionaries. Make sure your data is in one for these formats.
 * Ensure column names contain no spaces or special characters.
@@ -24,7 +24,7 @@ This document contains common issues pertaining to installing and running Tea an
 * Check your working directory with `os.getcwd()`
 * Use absolute paths if running from an IDE
 ---
-# Analysis and Runtime Errors
+## Analysis and Runtime Errors
 > *"Tea reports ‘incomplete specification’"*
 * Every analysis requires: Defined variables, a relationship, and a hypothesis. Missing any of these will cause Tea to stop the analysis.
 
@@ -32,7 +32,7 @@ This document contains common issues pertaining to installing and running Tea an
 * This erros can happen when your specification is valid but incomplete. Double check that all elements of your spec are declared properly.
 * Check that you called `tea.run()` at the end of your program.
 ---
-# Frequently Asked Questions (FAQs)
+## Frequently Asked Questions (FAQs)
 > *"What is Tea actually doing?"*
 
 Tea reads your specification, infers variable types (if needed), checks assumptions (if needed), and selects a statistically valid test. It then runs that test using established statistical libraries and returns the results of the test.

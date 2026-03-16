@@ -67,10 +67,10 @@ Tea supports four [data types](glossary.md):
 >     'name': '<VARIABLE1 NAME>'
 >     'data type': '<VARIABLE1 TYPE>' // nominal, ordinal, interval, or ratio
 > 
->      // for data types nominal or ordinal
+>     // for data types nominal or ordinal
 >     'categories': '[<CATEGORY1 NAME>, <CATEGORY2 NAME>, <CATEGORY3 NAME>, ...]'
 >
->      // for data types interal or ratio
+>     // for data types interal or ratio
 >     'range': '[<MIN VALUE>, <MAX VALUE>]'
 >   }
 > ]
@@ -90,11 +90,11 @@ After defining your variables, you must tell Tea how they relate to each other. 
   > study_design = {
   >   'study_type': '<STUDY TYPE>' // 'experiment' or 'observational study'
   > 
-  >     // if study type is an experiment
+  >   // if study type is an experiment
   >   'independent variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
   >   'dependent variables': '[<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
   > 
-  >     // if study type is an observational study
+  >   // if study type is an observational study
   >   'contributor variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...']
   >   'outcome variables': ['<VARIABLE1 NAME>', '<VARIABLE2 NAME>', ...]
   > }
@@ -139,12 +139,12 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
   
 - Create an assumptions dictionary:
   >```
-  >  assumptions = {
-  >    'normal distribution': [['<VARIABLE1>'], ...] 
-  >    'log normal distribution': [['<VARIABLE1>'], ...] 
-  >    'groups normally distributed': [['<VARIABLE1>', '<VARIABLE2>'], ...]
-  >    'equal variance': [['<VARIABLE1>', '<VARIABLE2>'], ...] 
-  >    'Type I (False Positive) Error Rate': <ALPHA RATE>
+  >assumptions = {
+  >  'normal distribution': [['<VARIABLE1>'], ...] 
+  >  'log normal distribution': [['<VARIABLE1>'], ...] 
+  >  'groups normally distributed': [['<VARIABLE1>', '<VARIABLE2>'], ...]
+  >  'equal variance': [['<VARIABLE1>', '<VARIABLE2>'], ...] 
+  >  'Type I (False Positive) Error Rate': <ALPHA RATE>
   >}
   >```
 
@@ -154,15 +154,13 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
 
 ## 6. Interpreting Tea’s Results
 Tea prints a [structured explanation](glossary.md) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
-Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypothesis. For the Kruskall-Wallis test, Tea assumes 1 categorial explanatory variable, 1 continuous outcome variable, 2 or more groups, and independent observations. Our data satisfies all of these assumptions, so Tea selected the Kruskall-Wallis test.
 
-test_statistic = 6.89813
- This measures how different the group medians are.
-p_value = 0.22833
- This is the probability of seeing differences this large (or larger) if all plants truly had the same median uptake.
-alpha = 0.05
-This is your significance threshold. If the p_value is smaller than this value, the results are statistically significant.
+- Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypotheses. 
 
- Null hypothesis - There is no difference in medians between Plant = Qn1, Qn2, Qn3, Qc1, Qc2, Qc3 on uptake.
-Interpretation - Fail to reject the null hypothesis at alpha = 0.05. Because p = 0.22833 > 0.05, the differences in uptake between these six plants are not statistically significant. Tea did not find evidence that these plants differ in their CO2 uptake.
+- Tea provides a list of values that are the results of the chosen test. 
+  1. **test_statistic**s measures the data involved in the hypothesis (difference between groups, correlation, etc.)
+  2. **p_value**: This is the probability of getting that test_statistic in a random sample if the null hypothesis is true.
+  3. **alpha**: This is your significance threshold. If the p_value is smaller than this value, the results are statistically significant.
+  4. **Null hypothesis**: Assumes the hypothesis is false. 
+  5. **Interpretation**: If the p value is less than the alpha value, than the hypothesis is deemed statiscally signifigant and the null hypothesis is rejected. If the p value is greater than the alpha value, than the null hypothesis isn't rejected and the hypothesis isn't deemed statistically significant. 
 

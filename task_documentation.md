@@ -50,7 +50,7 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 ### 2. Define Variables
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>
 
-Tea supports four [data types](glossary.md):
+Tea supports four [data types]((https://ekraw36.github.io/Tea_Docs/#/glossary?id=variables)):
   1. **nominal**: qualitative unordered categories (e.g., “chilled”, “nonchilled”)
   2. **ordinal**: numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
   3. **interval**: numeric values without a meaningful zero
@@ -81,7 +81,7 @@ Tea supports four [data types](glossary.md):
 // image
 
 ### 3. Define Study Design
-After defining your variables, you must tell Tea how they relate to each other. This is called the [study design](glossary.md). Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study. You must assign atleast one variable for each type, but you can also assign multiple.
+After defining your variables, you must tell Tea how they relate to each other. This is called the [study design](https://ekraw36.github.io/Tea_Docs/#/glossary?id=study-designs). Tea needs to know which variables are independent/contributors, which are dependent/outcomes, and whether your dataset comes from an experiment or an observational study. You must assign atleast one variable for each type, but you can also assign multiple.
 
 - Decide whether your dataset represents an experiment or an observational study. 
   
@@ -105,7 +105,7 @@ After defining your variables, you must tell Tea how they relate to each other. 
 // image
 
 ### 4. Define Hypotheses
-A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. [(Learn more about hypothesis testing here)](https://resources.nu.edu/statsresources/hypothesistesting)
+A [hypothesis](https://ekraw36.github.io/Tea_Docs/#/glossary?id=hypotheses) tells Tea what relationship you want to test. Tea supports several types of hypotheses, including one‑sided comparisons, two‑sided comparisons, partial orders, and linear relationships. [(Learn more about hypothesis testing here)](https://resources.nu.edu/statsresources/hypothesistesting)
 
 - Identify the variables involved in your hypotheses. Atleast one hypothesis is required, but you can also define multiple and Tea will run a test for each one.
   
@@ -131,7 +131,7 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
   // IMAGE
 
 ### 5. Define Assumptions *(Optional)*
-[Assumptions](glossary.md) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate. Assumptions about variance and distribution can only be applied to *numerical* variables.
+[Assumptions](https://ekraw36.github.io/Tea_Docs/#/glossary?id=assumptions) allow you to incorporate domain knowledge or specify statistical constraints. Tea checks these assumptions and warns you if they are violated. Currently Tea supports assumptions about equal variance, normal distribution, and Type 1 (False Positive) Error rate. Assumptions about variance and distribution can only be applied to *numerical* variables.
 
 *Note: You don't have to define assumptions for Tea to successfully run.* 
 
@@ -153,16 +153,11 @@ A [hypothesis](glossary.md) tells Tea what relationship you want to test. Tea su
 // image
 
 ## Interpreting Tea’s Results
-Tea prints a [structured explanation](glossary.md) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
+Tea prints a [structured explanation](https://ekraw36.github.io/Tea_Docs/#/glossary?id=results) of the statistical tests it considered and the final test it selected. It also reports the test statistic, p‑value, effect size, and whether the null hypothesis should be rejected.
 
 - Read the list of tests Tea considered and the passed or failed assumptions for each test. This shows how Tea reasoned about your hypotheses. 
 
 - Tea provides a list of values that are the results of the chosen test. 
-  1. **test_statistic**: measures the data involved in the hypothesis (difference between groups, correlation, etc.)
-  2. **p_value**: This is the probability of getting that test_statistic in a random sample if the null hypothesis is true.
-  3. **alpha**: This is your significance threshold. If the p_value is smaller than this value, the results are statistically significant.
-  4. **Null hypothesis**: Assumes the hypothesis is false. 
-  5. **Interpretation**: If the p value is less than the alpha value, than the hypothesis is deemed statistcally signifigant and the null hypothesis is rejected. If the p value is greater than the alpha value, than the null hypothesis isn't rejected and the hypothesis isn't deemed statistically significant.
 
 // image
 

@@ -50,7 +50,7 @@ Tea performs statistical analysis on data you provide. Tea accepts data as eithe
 ### 2. Define Variables
 Each column in the dataset corresponds to a different variable. For each variable you plan to analyze, Tea requires you to define it with a name, data type, and (if needed) a category or range. Tea uses these definitions to understand what kind of data you are working with and to determine which statistical tests are appropriate.<br>
 
-Tea supports four [data types]((https://ekraw36.github.io/Tea_Docs/#/glossary?id=variables)):
+Tea supports four [data types](https://ekraw36.github.io/Tea_Docs/#/glossary?id=variables):
   1. **nominal**: qualitative unordered categories (e.g., “chilled”, “nonchilled”)
   2. **ordinal**: numerical ordered categories (e.g., 1 < 2 < 3 < 4 < 5)
   3. **interval**: numeric values without a meaningful zero

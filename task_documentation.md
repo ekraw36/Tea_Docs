@@ -1,7 +1,5 @@
 # Using Tea
 ---
-## Audience and Purpose
-
 This document is for an audience with any amount of experience with programming and statistical analysis who want to set up and use Tea for automatic statistical analysis for their datasets. This document guides readers through installing and loading datasets into Tea, then it teaches readers how to define variables, write hypotheses, add assumptions, run tests, and interpret the results of Tea’s statistical tests.
 
 ## Setting up Tea

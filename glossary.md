@@ -5,7 +5,7 @@ This document provides basic explanations for the key parts of statistical analy
 ## Variables
 Variables represent the pieces of information measured or observed in a study. Tea uses variable definitions to understand what kind of data you have and which statistical tests are appropriate for your data.
 
-**Variable Data Types**
+**Variable Data Types**<br>
 Tea supports four varieties of variable data types. These correspond to standard measurement levels in statistics and determine which comparisons and tests are valid.
 
 - ***Nominal:*** The data can be sorted into categories with no inherent ordering within them. Tea treats each category as distinct but unordered.
@@ -73,16 +73,16 @@ Assumptions describe statistical properties that you believe are true in your da
 ## Possible Tests
 Tea supports a variety of statistical tests that each test for a different result. Tea automatically selects the most appropriate test from a library of statistical tests based on your variables, hypotheses, and assumptions. Each test can be organized into four categories:
 	
-- **Group Comparison Tests**
+- **Group Comparison Tests**<br>
 These tests evaluate whether two or more groups differ on a chosen outcome. They answer questions like “Does the drug reduce pain compared to the placebo?”
 
-- **Correlation Tests**
+- **Correlation Tests**<br>
 These tests evaluate whether two variables change together in a consistent pattern. They quantify the strength and direction of a relationship between two variables. They answer questions like “Is an increase in drug dosage associated with a change in pain level?”
 
-- **Model-based tests**
+- **Model-based tests**<br>
 These tests evaluate structured relationships involving multiple predictors, interactions, and other complex designs. They answer questions like “Does dosage reduce pain even after controlling for age?”
 
-- **Rank-based / Nonparametric alternatives**
+- **Rank-based / Nonparametric alternatives**<br>
 These tests evaluate differences or relationships between variables without assuming normality or equal variance. They answer the same questions as the tests above but work on ranked data instead of raw values.
 	
 ## Results

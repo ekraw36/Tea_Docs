@@ -15,9 +15,9 @@ This document contains common issues pertaining to installing and running Tea an
 
 # Data loading and Formatting Issues
 > *"Tea says my data is ‘not recognized’ or ‘invalid format.’"*
-* Tea accepts Pandas DataFrames, CSV files, and Python dictionaries.
+* Tea accepts Pandas DataFrames, CSV files, and Python dictionaries. Make sure your data is in one for these formats.
 * Ensure column names contain no spaces or special characters.
-* Confirm that categorical variables are encoded as strings, not integers.
+* Confirm that categorical variables are encoded as strings, not integers. 
   
 > *"Tea cannot find the data set I referenced”*
 * Check your working directory with `os.getcwd()`
@@ -28,7 +28,7 @@ This document contains common issues pertaining to installing and running Tea an
 * Every analysis requires: Defined variables, a relationship, and a hypothesis. Missing any of these will cause Tea to stop the analysis.
   
 > *"Tea runs but produces no results."*
-* This usually means that your specification is valid but incomplete. Double check that all elements of your spec are declared properly. 
+* This erros can happen when your specification is valid but incomplete. Double check that all elements of your spec are declared properly. 
 * Check that you called `tea.run()` at the end of your program.
   
 # Frequently Asked Questions (FAQs)

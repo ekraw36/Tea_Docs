@@ -1,10 +1,6 @@
 # Conceptual Overview
 ---
-## Audience and Purpose
-
-This overview is written for two groups of users who approach Tea from different backgrounds. Python‑literate users are comfortable writing code and working with data structures but may not know much about statistics. They want Tea to help them run analyses without choosing tests themselves. Statistically‑literate users understand hypotheses, variables, and assumptions but may not be confident writing code. They want Tea to check assumptions, select tests, and explain results clearly.
-
-Both groups need a shared understanding of what Tea is, how it works, and how its main parts fit together before they begin installing it or running tasks. This document provides that foundation.
+This overview is written for two groups of users who approach Tea from different backgrounds. Python‑literate users are comfortable writing code and working with data structures but may not know much about statistics. They want Tea to help them run analyses without choosing tests themselves. Statistically‑literate users understand hypotheses, variables, and assumptions but may not be confident writing code. They want Tea to check assumptions, select tests, and explain results clearly. Both groups need a shared understanding of what Tea is, how it works, and how its main parts fit together before they begin installing it or running tasks. This document provides that foundation.
 
 ---
 ## What Tea Is

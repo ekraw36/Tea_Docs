@@ -1,4 +1,4 @@
-## Tea - Automating Statistical Analysis
+Tea - Automating Statistical Analysis
 
 !['tea' in purple text next to a simple black and white cat silhouette](images/tealogo.png)
 

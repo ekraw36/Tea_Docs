@@ -11,9 +11,9 @@ This document is for an audience with any amount of experience with programming 
 2. Install Tea
 Before we can use Tea, we first have to install it onto our computer. 
    	- Open a terminal or command prompt. 
-	- Type `pip install tealang` and hit enter. A long list of messages will appear while installing tea. This process can 	take a few minutes, so be patient! 
+	- Type `pip install tealang` and hit enter. A long list of messages will appear while installing tea. This process can 		take a few minutes, so be patient! 
 
-*Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet. . . `try typing `py -m pip install tealang` instead.*
+*Note: If you are getting a red error message `The term ‘pip’ is not recognized as the name of a cmdlet...`try typing `py -m pip install tealang` instead.*
 
     - Once Tea is installed, the cursor will reappear and you will regain the ability to type commands. 
 

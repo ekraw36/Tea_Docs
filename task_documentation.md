@@ -20,7 +20,7 @@ Now that Tea is installed, we can import it into any Python file to use it.
  	- Type `import tea` into the first line of the file.
 	- Save the file pressing the *Ctrl + S* keys simultaneously or by pressing the *Save* button in your IDE.
 
-## Using Tea
+## Defining Data & Specifications
 
 1. **Load a dataset into Tea**<br>
 Tea performs statistical analysis on data you provide. Tea accepts data as either a CSV file or a Pandas DataFrame. If the data is a Pandas DataFrame, Tea expects it to be in long format.
